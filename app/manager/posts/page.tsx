@@ -120,25 +120,25 @@ export default function PostsPage() {
             <tbody>
               {p.rows.map((r) => (
                 <tr key={r.title} className="h-[68px] border-t border-line-soft">
-                  <td className="pl-[21px] py-[17px] align-middle">
+                  <td className="pl-[21px] py-[18px] align-middle">
                     <RepMark on={false} />
                   </td>
-                  <td className="pl-[21px] py-[17px] align-middle text-[14px] text-body">{r.category}</td>
-                  <td className="pl-[21px] pr-4 py-[17px] align-middle text-[14px] text-body leading-[17px]">{r.title}</td>
-                  <td className="pl-[21px] py-[17px] align-middle">
+                  <td className="pl-[21px] py-[18px] align-middle text-[14px] text-body">{r.category}</td>
+                  <td className="pl-[21px] pr-4 py-[18px] align-middle text-[14px] text-body leading-[17px]">{r.title}</td>
+                  <td className="pl-[21px] py-[18px] align-middle">
                     <DateCell date={r.date} />
                   </td>
-                  <td className="pl-[20px] pr-3 py-[17px] align-middle">
+                  <td className="pl-[20px] pr-3 py-[18px] align-middle">
                     <div className="flex flex-wrap gap-x-[6px] gap-y-[12px]">
                       {r.tags.map((t) => (
                         <Tag key={t}>{t}</Tag>
                       ))}
                     </div>
                   </td>
-                  <td className="pl-[21px] py-[17px] align-middle">
+                  <td className="pl-[21px] py-[18px] align-middle">
                     <Toggle defaultOn={r.published} />
                   </td>
-                  <td className="pl-[18px] py-[17px] align-middle">
+                  <td className="pl-[18px] py-[18px] align-middle">
                     <a href="#" className="text-[14px] text-link">미리보기</a>
                   </td>
                 </tr>
