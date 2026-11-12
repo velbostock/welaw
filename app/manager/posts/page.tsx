@@ -30,12 +30,12 @@ export default function PostsPage() {
       <PageHeader
         title={<span className="text-[17px]">포스트</span>}
         right={
-          <button className="h-8 w-[110px] rounded-[4px] bg-brand text-white text-[14px] font-medium inline-flex items-center justify-center leading-none">
+          <button className="h-8 px-3 sm:px-0 sm:w-[110px] rounded-[4px] bg-brand text-white text-[14px] font-medium inline-flex items-center justify-center leading-none">
             <Plus className="mr-[6px] text-[14px]" /> 포스트 작성
           </button>
         }
         tabs={
-          <div className="w-[944px] mx-auto flex gap-[25px] -mb-px">
+          <div className="wrap flex gap-[25px] -mb-px overflow-x-auto no-scrollbar whitespace-nowrap">
             <button className="h-12 text-[18px] font-medium text-ink border-b-2 border-ink leading-none">
               전체 <span className="text-brand">{p.total}</span>
             </button>
@@ -46,13 +46,13 @@ export default function PostsPage() {
       />
 
       <section className="bg-page flex-1 pt-[42px] pb-[20px]">
-        <div className="w-[944px] mx-auto">
+        <div className="wrap">
           <h2 className="inline-flex items-center text-[16px] font-bold text-ink leading-none">
             대표 포스트 <Question className="ml-[6px] text-[14px] text-faint" />
           </h2>
 
           {/* rep table: top 190 */}
-          <table className="mt-[16px] w-full bg-white table-fixed border-collapse">
+          <div className="mt-[16px] tbl-scroll"><table className="w-full min-w-[900px] bg-white table-fixed border-collapse">
             <colgroup>
               <col style={{ width: 75 }} />
               <col style={{ width: 106 }} />
@@ -81,14 +81,14 @@ export default function PostsPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
 
           <div className="mt-[35px]">
             <SelectButtons />
           </div>
 
           {/* main table: top 582 */}
-          <table className="mt-[11px] w-full bg-white table-fixed border-collapse">
+          <div className="mt-[11px] tbl-scroll"><table className="w-full min-w-[900px] bg-white table-fixed border-collapse">
             <colgroup>
               <col style={{ width: 64 }} />
               <col style={{ width: 96 }} />
@@ -144,7 +144,7 @@ export default function PostsPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           <button className="w-full h-[54px] bg-line-soft text-[14px] text-body">더 보기</button>
         </div>
         <Footer className="pt-[18px]" />

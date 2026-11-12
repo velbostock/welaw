@@ -11,21 +11,21 @@ export default function VideosPage() {
       <PageHeader
         title="동영상"
         right={
-          <button className="h-8 w-[110px] rounded-[4px] bg-brand text-white text-[14px] font-medium inline-flex items-center justify-center leading-none">
+          <button className="h-8 px-3 sm:px-0 sm:w-[110px] rounded-[4px] bg-brand text-white text-[14px] font-medium inline-flex items-center justify-center leading-none">
             <Plus className="mr-[6px] text-[14px]" /> 동영상 등록
           </button>
         }
       />
 
       <section className="bg-page flex-1 pt-[69px] pb-[20px]">
-        <div className="w-[944px] mx-auto">
+        <div className="wrap">
           <h2 className="inline-flex items-center text-[16px] font-bold text-ink leading-none">
             대표 동영상 <span className="ml-[5px] font-normal text-[14px] text-body">(최대 3개)</span>
             <Question className="ml-[6px] text-[14px] text-faint" />
           </h2>
 
           {/* rep table: top 157, rows 62 */}
-          <table className="mt-[7px] w-full bg-white table-fixed border-collapse">
+          <div className="mt-[7px] tbl-scroll"><table className="w-full min-w-[760px] bg-white table-fixed border-collapse">
             <colgroup>
               <col style={{ width: 78 }} />
               <col style={{ width: 109 }} />
@@ -44,7 +44,7 @@ export default function VideosPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
 
           <div className="mt-[37px] flex justify-end gap-[7px]">
             <button className="h-[34px] w-[46px] rounded-[4px] bg-white border border-fill-btn text-[14px] text-ink">선택</button>
@@ -52,7 +52,7 @@ export default function VideosPage() {
           </div>
 
           {/* main table: top 427 */}
-          <table className="mt-[9px] w-full bg-white table-fixed border-collapse">
+          <div className="mt-[9px] tbl-scroll"><table className="w-full min-w-[760px] bg-white table-fixed border-collapse">
             <colgroup>
               <col style={{ width: 63 }} />
               <col style={{ width: 75 }} />
@@ -100,7 +100,7 @@ export default function VideosPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           <button className="w-full h-12 bg-line-soft text-[14px] text-body">더 보기</button>
         </div>
         <Footer className="pt-[35px]" />

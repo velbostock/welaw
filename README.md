@@ -50,4 +50,15 @@ public/fonts/           # Pretendard Variable (self-hosted)
 | `tag` / `toggle` / `link` / `search` | `#566d9f` / `#67b2ef` / `#337ab7` / `#337de6` | 태그 칩 / 토글 / 링크 / 검색 버튼 |
 | `line` / `line-soft` / `line-card` / `fill` / `fill-btn` | `#e8e8e8` / `#eef1f4` / `#eceff2` / `#f1f1f1` / `#dce0e4` | 구분선·필터 배경·보조 버튼 |
 
+## 반응형
+
+| 구간 | 사이드바 | 콘텐츠 폭 | 비고 |
+| --- | --- | --- | --- |
+| ≥ 1280px (xl) | 고정 200px | 944px 고정 | 원본 캡처와 픽셀 단위로 일치 |
+| 1024~1279px (lg) | 고정 200px | 유동(좌우 24px 여백) | 카드 그리드는 2열, 테이블은 가로 스크롤 |
+| 640~1023px (sm/md) | 햄버거 드로어 | 유동(24px 여백) | 상단 앱바 56px, 카드 2~3열 |
+| < 640px | 햄버거 드로어 | 유동(16px 여백) | 카드 1열, 통계 3열, 상담글 캐러셀은 가로 스와이프 |
+
+`.wrap` 유틸리티(`app/globals.css`)가 콘텐츠 폭을 담당하고, 테이블은 `.tbl-scroll` 래퍼 안에서 `min-width`를 유지한 채 가로 스크롤됩니다. 드로어 상태는 `components/ManagerShell.tsx`에서 관리합니다. 태블릿·모바일 캡처는 `docs/compare/rwd_*.png`에 있습니다.
+
 레이아웃 상수: 사이드바 200px, 콘텐츠 컨테이너 944px(유료 상담만 940px), 페이지 헤더 60px(+탭 48px), 메뉴 아이템 32px/피치 36px, 테이블 행 61~62px, 태그 칩 28px.

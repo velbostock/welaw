@@ -34,12 +34,19 @@ const LINKS = [
   { label: "설정" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ open = false, onClose }: { open?: boolean; onClose?: () => void }) {
   const pathname = usePathname();
   const isActive = (item: Item) => pathname === item.href || (item.children?.some((c) => pathname === c.href) ?? false);
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[200px] bg-side text-side-text overflow-y-auto no-scrollbar z-20 px-4">
+    <aside
+      className={`fixed left-0 top-0 h-screen w-[260px] lg:w-[200px] bg-side text-side-text overflow-y-auto no-scrollbar z-40 lg:z-20 px-4 transition-transform duration-200 lg:transition-none ${
+        open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+      }`}
+    >
+      <button aria-label="메뉴 닫기" onClick={onClose} className="lg:hidden absolute right-2 top-2 w-10 h-10 flex items-center justify-center text-side-link">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
       {/* logo: 40 → 81 */}
       <Link href="/manager/dashboard" className="block pt-[40px] h-[102px] select-none">
         <span className="block text-brand font-extrabold text-[25px] leading-[24px] tracking-[-0.05em]">welaw</span>

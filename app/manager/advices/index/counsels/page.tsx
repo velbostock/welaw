@@ -14,7 +14,7 @@ export default function CounselsPage() {
         title="유료 상담"
         right={<a href="#" className="text-[14px] text-ink leading-none">내 상담 설정</a>}
         tabs={
-          <div className="w-[940px] mx-auto grid grid-cols-4 -mb-px">
+          <div className="wrap wrap-940 grid grid-cols-4 -mb-px">
             {TABS.map((t, i) => (
               <button key={t} className={`h-12 text-[14px] leading-none ${i === 0 ? "text-ink font-medium border-b-2 border-ink" : "text-faint"}`}>
                 {t}
@@ -25,15 +25,15 @@ export default function CounselsPage() {
       />
 
       <section className="bg-page flex-1 pt-[25px] pb-[20px]">
-        <div className="w-[940px] mx-auto">
+        <div className="wrap wrap-940">
           {/* total payment 135 → 302 */}
           <div className="bg-white rounded-[6px] card-shadow h-[168px] relative px-[29px] pt-[22px]">
             <h2 className="text-[16px] font-bold text-ink leading-none">누적 결제액</h2>
             <a href="#" className="absolute right-[29px] top-[24px] text-[12px] text-light leading-none">정산 안내</a>
-            <p className="text-center text-[64px] font-bold text-ink tracking-tight leading-[64px] mt-[14px]">
+            <p className="text-center text-[34px] sm:text-[64px] font-bold text-ink tracking-tight leading-[40px] sm:leading-[64px] mt-[20px] sm:mt-[14px]">
               128,560,000<span>원</span>
             </p>
-            <p className="text-center text-[14px] text-light leading-none mt-[10px]">카드 121,930,000원 · 쿠폰 6,630,000원</p>
+            <p className="text-center text-[12px] sm:text-[14px] text-light leading-none mt-[10px] break-keep">카드 121,930,000원 · 쿠폰 6,630,000원</p>
           </div>
 
           {/* sub tabs 325 → 371 */}
@@ -43,7 +43,7 @@ export default function CounselsPage() {
           </div>
 
           {/* counts 408 */}
-          <div className="mt-[30px] flex items-end gap-6 text-[16px] text-light leading-none">
+          <div className="mt-[30px] flex flex-wrap items-end gap-x-6 gap-y-3 text-[16px] text-light leading-none">
             <span className="text-[18px] text-ink">전체 ({c.total})</span>
             <span>상담대기중 ({c.waiting})</span>
             <span>상담완료 ({c.done})</span>
@@ -51,7 +51,7 @@ export default function CounselsPage() {
           </div>
 
           {/* filter 438 → 511 */}
-          <div className="mt-[19px] h-[73px] bg-fill px-[7px] pt-[12px] flex items-start">
+          <div className="mt-[19px] bg-fill px-[7px] pt-[12px] pb-3 sm:pb-[6px] flex flex-wrap items-start gap-y-3">
             <div>
               <label className="block text-[14px] text-body leading-none mb-[9px]">의뢰인</label>
               <input
@@ -61,7 +61,7 @@ export default function CounselsPage() {
             </div>
             <div className="ml-[10px]">
               <label className="block text-[14px] text-body leading-none mb-[9px]">분야</label>
-              <div className="relative w-[213px]">
+              <div className="relative w-[160px] sm:w-[213px]">
                 <select className="appearance-none w-full h-8 bg-white border border-[#e6e6e6] rounded-[3px] pl-[10px] pr-8 text-[14px] text-ink outline-none">
                   <option>전체</option>
                 </select>
@@ -82,14 +82,14 @@ export default function CounselsPage() {
                 </div>
               </div>
             </div>
-            <div className="ml-auto mt-[33px] flex gap-1">
+            <div className="ml-auto self-end flex gap-1">
               <button className="h-8 w-[59px] rounded-[3px] bg-fill-btn text-[14px] text-ink">초기화</button>
               <button className="h-8 w-[42px] rounded-[3px] bg-search text-[14px] text-white">검색</button>
             </div>
           </div>
 
           {/* table: head 520→562, rows 61 */}
-          <table className="mt-[11px] w-full bg-white table-fixed border-collapse">
+          <div className="mt-[11px] tbl-scroll"><table className="w-full min-w-[940px] bg-white table-fixed border-collapse">
             <colgroup>
               {WIDTHS.map((w, i) => (
                 <col key={i} style={{ width: w }} />
@@ -129,7 +129,7 @@ export default function CounselsPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
 
           {/* pagination 1177 → 1229 */}
           <div className="bg-white h-[60px] flex items-center relative">
@@ -142,7 +142,7 @@ export default function CounselsPage() {
                 </li>
               ))}
             </ul>
-            <a href="#" className="absolute right-[24px] inline-flex items-center text-[14px] text-ink leading-none">
+            <a href="#" className="hidden sm:inline-flex absolute right-[24px] items-center text-[14px] text-ink leading-none">
               다음 10페이지 <Chevron className="ml-[6px] text-[13px]" />
             </a>
           </div>
