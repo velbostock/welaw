@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  --color-side: #1f2225;
+  --color-side-active: #3a3e40;
+  --color-side-btn: #464c53;
+  --color-side-text: #90969d;
+  --color-side-link: #cbcfd3;
+  --color-side-muted: #5c6166;
+
+  --color-page: #f5f7f9;
+  --color-page-ad: #f4f7fa;
+  --color-ink: #33383e;
+  --color-body: #464c53;
+  --color-muted: #6e757c;
+  --color-light: #90969d;
+  --color-faint: #bbbfc4;
+  --color-line: #e8e8e8;
+  --color-line-soft: #eef1f4;
+  --color-line-card: #eceff2;
+  --color-fill: #f1f1f1;
+  --color-fill-btn: #dce0e4;
+
+  --color-brand: #fa5e02;
+  --color-brand-soft: #fff7f4;
+  --color-brand-tint: #fef3eb;
+
+  --color-tag: #566d9f;
+  --color-toggle: #67b2ef;
+  --color-link: #337ab7;
+  --color-search: #337de6;
+  --color-inquiry-bg: #ececf2;
+  --color-inquiry-fg: #4e517b;
+  --color-banner: #27282b;
+}
+
+html, body { height: 100%; }
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+  background: var(--color-page);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+.card-shadow { box-shadow: 0 2px 8px rgba(31, 34, 37, 0.06); }
+.card-shadow-lg { box-shadow: 0 4px 16px rgba(31, 34, 37, 0.08); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
